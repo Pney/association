@@ -12,6 +12,8 @@ require 'faker'
 Debt.destroy_all
 Person.destroy_all
 User.destroy_all
+Debt.destroy_all
+Person.destroy_all
 
 puts "Data/Hora Inicio: #{Time.now}"
 
