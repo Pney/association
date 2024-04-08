@@ -14,7 +14,7 @@ class PeopleController < ApplicationController
       @active = true
     end
 
-    @people = Person.where(active: @active).paginate(page: params[:page]).order(id: :desc)
+    @people = Person.includes(:user).where(active: @active).paginate(page: params[:page]).order(id: :desc)
   end
 
   def search

@@ -3,7 +3,7 @@ class DebtsController < ApplicationController
 
   # GET /debts or /debts.json
   def index
-    @debts = Debt.all.paginate(page: params[:page]).order(id: :desc)
+    @debts = Debt.includes(:person).paginate(page: params[:page]).order(id: :desc)
   end
 
   # GET /debts/new
