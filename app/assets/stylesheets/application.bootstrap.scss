@@ -1,2 +1,40 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+.pagination {
+  justify-content: center;
+  margin: 5px 0px;
+
+  a, em.current, .disabled {
+    margin: 1px;
+    padding: 0.1em 0.8em;
+    border: 0.5px solid #adacac;
+    border-radius: 30px;
+  }
+
+  .gap {
+    margin: 3px;
+  }
+
+  .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #2e6ab1;
+    color: white;
+    border: 1px solid #2e6ab1;
+  }
+
+  a {
+    text-decoration: none;
+    background-color: #ffffff;
+
+    &:hover, &:focus {
+      background-color: #DFDFDF;
+    }
+  }
+
+  .disabled {
+    color: #999999;
+    border-color: #dddddd;
+  }
+}

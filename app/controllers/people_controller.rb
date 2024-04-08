@@ -2,9 +2,8 @@ class PeopleController < ApplicationController
   before_action :set_person, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
-  # GET /people or /people.json
+
   def index
-    # TODO: ugly code
     if !params[:active].nil?
       if params[:active] == 'true'
         @active = true
@@ -15,11 +14,9 @@ class PeopleController < ApplicationController
       @active = true
     end
 
-    @people = Person.where(active: @active)
+    @people = Person.where(active: @active).paginate(page: params[:page]).order(id: :desc)
   end
 
-  # GET /people/search?q=a_name
-  # Returns an HTML for autocomplete
   def search
     @people = Person.where(active: true).
       where("UPPER(name) LIKE ?", "#{params[:q].upcase}%").
