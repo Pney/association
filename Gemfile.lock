@@ -206,9 +206,9 @@ GEM
       railties
       redis
       redis-namespace
-    railties (7.1.3)
-      actionpack (= 7.1.3)
-      activesupport (= 7.1.3)
+    railties (7.1.3.2)
+      actionpack (= 7.1.3.2)
+      activesupport (= 7.1.3.2)
       irb
       rackup (>= 1.0.0)
       rake (>= 12.2)
