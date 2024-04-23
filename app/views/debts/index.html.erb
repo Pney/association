@@ -31,7 +31,7 @@
           <td><%= debt.id %></td>
           <td><%= debt.person.name %></td>
           <td><%= debt.observation %></td>
-          <td class="text-end"><%= debt.amount %></td>
+          <td class="text-end"><%= number_to_currency(debt.amount, unit: "R$") %></td>
           <td class="text-end">
             <%= button_to debt, method: :delete, class: "btn btn-danger btn-sm" do %>
               <i class="bi bi-trash"></i>
