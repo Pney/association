@@ -3,15 +3,7 @@
 <div class="row mt-4">
   <div class="col-6">
     <%= form_with(model: person) do |form| %>
-      <% if person.errors.any? %>
-        <div class="alert alert-danger">
-          <ul>
-            <% person.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+      <%= render partial: 'shared/errors/validation_errors', locals: { object: person } %>
 
       <div class="mb-3">
         <%= form.label :name, "Nome", class: 'form-label' %>
