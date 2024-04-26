@@ -1,0 +1,43 @@
+<h1>Dashboard</h1>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <table class="table">
+          <tr>
+            <td>Total de pagamentos</td>
+            <td class="text-end"><%= number_to_currency(@total_payments, unit: 'R$ ') %></td>
+          </tr>
+          <tr>
+            <td>Total de débitos</td>
+            <td class="text-end"><%= number_to_currency(@total_debts, unit: 'R$ ') %></td>
+          </tr>
+          <tr>
+            <td>Saldo</td>
+            <td class="text-end"><%= number_to_currency(@balance, unit: 'R$ ') %></td>
+          </tr>
+        </table>
+
+        <h5 class="card-title">Maior saldo</h5>
+        <table class="table">
+          <tr>
+            <td><%= @top_person&.name %></td>
+            <td class="text-end"><%= number_to_currency(@top_person&.balance, unit: 'R$ ') %></td>
+          </tr>
+        </table>
+
+        <h5 class="card-title">Menor saldo</h5>
+        <table class="table">
+          <tr>
+            <td><%= @bottom_person&.name %></td>
+            <td class="text-end"><%= number_to_currency(@bottom_person&.balance, unit: 'R$ ') %></td>
+          </tr>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render partial: 'dashboard/graph' %>

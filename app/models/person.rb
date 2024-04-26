@@ -7,6 +7,9 @@ class Person < ApplicationRecord
   validates :national_id, uniqueness: true
   validate :cpf_or_cnpj
 
+  scope :active, -> { where(active: true) }
+  scope :inactive, -> { where(active: false) }
+
   private
 
   def cpf_or_cnpj

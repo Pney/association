@@ -2,7 +2,7 @@ class PaymentsController < ApplicationController
   before_action :set_payment, only: %i[show edit update destroy]
 
   def index
-    @payments = Payment.paginate(page: params[:page]).order(id: :desc)
+    @payments = Payment.includes(:person).paginate(page: params[:page]).order(id: :desc)
   end
 
   def show

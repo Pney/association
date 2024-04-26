@@ -52,6 +52,7 @@ gem "devise-i18n"
 gem "devise-bootstrap5"
 gem 'will_paginate', '~> 4.0'
 gem 'rubocop'
+gem 'chartkick'
 
 group :development, :production do
   gem 'rails_performance'
