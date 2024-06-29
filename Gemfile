@@ -18,6 +18,8 @@ gem "importmap-rails"
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
+gem "sidekiq"
+
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
@@ -58,7 +60,11 @@ group :development, :production do
   gem 'rails_performance'
 end
 
+# Generate fake data
 gem 'faker'
+
+# Log
+gem "audited"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -66,6 +72,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'shoulda-matchers'
+  gem 'letter_opener_web', '~> 2.0'
+  gem 'letter_opener'
 end
 
 group :development do
