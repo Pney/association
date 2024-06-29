@@ -38,3 +38,17 @@
     border-color: #dddddd;
   }
 }
+
+.ul-table {
+  list-style-type: none;
+  padding: 0;
+}
+
+.li-table {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  strong {
+    display: inline-block;
+    width: 150px;
+  }
+}

@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ação</th>
+      <th>Email do Usuário</th>
+      <th>Alterações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% person.audits.each do |audit| %>
+      <tr>
+        <td> <%= audit.action %> </td>
+        <td> <%= audit.user.email %> </td>
+        <td> <%= audit.audited_changes %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

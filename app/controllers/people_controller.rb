@@ -2,7 +2,6 @@ class PeopleController < ApplicationController
   before_action :set_person, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
 
-
   def index
     if !params[:active].nil?
       if params[:active] == 'true'
@@ -29,20 +28,16 @@ class PeopleController < ApplicationController
     end
   end
 
-  # GET /people/1 or /people/1.json
   def show
   end
 
-  # GET /people/new
   def new
     @person = Person.new active: true
   end
 
-  # GET /people/1/edit
   def edit
   end
 
-  # POST /people or /people.json
   def create
     @person = Person.new(person_params)
     @person.user = current_user
@@ -58,7 +53,6 @@ class PeopleController < ApplicationController
     end
   end
 
-  # PATCH/PUT /people/1 or /people/1.json
   def update
     respond_to do |format|
       if @person.update(person_params)
@@ -71,7 +65,6 @@ class PeopleController < ApplicationController
     end
   end
 
-  # DELETE /people/1 or /people/1.json
   def destroy
     @person.destroy!
 
@@ -82,12 +75,10 @@ class PeopleController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_person
       @person = Person.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def person_params
       params.require(:person).permit(:name, :phone_number, :national_id, :active)
     end
